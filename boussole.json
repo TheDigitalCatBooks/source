@@ -1,0 +1,8 @@
+{
+    "SOURCES_PATH": "russian_blue/static/scss",
+    "TARGET_PATH": "russian_blue/static/css",
+    "LIBRARY_PATHS": [],
+    "OUTPUT_STYLES": "nested",
+    "SOURCE_COMMENTS": false,
+    "EXCLUDES": []
+}

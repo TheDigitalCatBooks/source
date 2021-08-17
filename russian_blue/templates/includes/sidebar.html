@@ -1,0 +1,37 @@
+<nav>
+  {% include 'includes/navigation/links.html' %}
+</nav>
+
+<section>
+  <header>
+    <h2>Pay what you want</h2>
+  </header>
+  <p>You can read the books and download the PDF versions for free. If you value my work and want to support me you can buy the PDF paying what you want. Thanks!</p>
+  {% for series_name, series_articles in series.items() %}
+  {% set article = series_articles[0] %}
+  {% if article.series_info %}
+  <article class="card">
+    <a href="{{ article.url }}">
+      <img src="/images/{{ article.image if article.image else 'article_image_placeholder' }}.jpg" alt="{{ article.image if article.image else 'article_image_placeholder' }}" />
+    </a>
+    <div class="body">
+      <h2>{{ series_name }}</h2>
+      <div class="actions">
+        <a class="action" href="{{ article.series_buy_url }}">Buy the book</a>
+      </div>
+    </div>
+  </article>
+  {% endif %}
+  {% endfor %}
+
+</section>
+<section>
+  <header>
+    <h2>Get in touch</h2>
+  </header>
+  <ul class="contact">
+    {% for s in SOCIAL %}
+    <li><i class="fab fa-{{ s.icon }}" aria-hidden="true"></i> <a href="{{ s.url }}">{{ s.name }}</a></li>
+    {% endfor %}
+  </ul>
+</section>

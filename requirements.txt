@@ -1,0 +1,10 @@
+pelican
+markdown
+punch.py
+webassets
+cssmin
+jsmin
+mdx_video
+beautifulsoup4
+pelican-webassets
+mau
