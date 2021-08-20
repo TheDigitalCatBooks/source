@@ -1,0 +1,8 @@
+# Ignore content dir as it is created automatically
+pelican/content
+
+# Ignore XCF files
+*.xcf
+
+# Ignore book sources
+sources/*
