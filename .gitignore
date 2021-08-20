@@ -1,8 +1,13 @@
-# Ignore content dir as it is created automatically
+# Ignore content and output directories
+# as they are created automatically
 pelican/content
+pelican/output
 
 # Ignore XCF files
 *.xcf
 
 # Ignore book sources
-sources/*
+sources
+
+# Ignore the deploy directory
+deploy
