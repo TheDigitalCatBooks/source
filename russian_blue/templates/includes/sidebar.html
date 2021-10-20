@@ -9,7 +9,7 @@
   <p>You can read the books and download the PDF versions for free. If you value my work and want to support me you can buy the PDF paying what you want. Thanks!</p>
   {% for series_name, series_articles in series.items() %}
   {% set article = series_articles[0] %}
-  {% if article.series_info %}
+  {% if article.series_buy_url %}
   <article class="card">
     <a href="/{{ article.url }}">
       <img src="/images/{{ article.image if article.image else 'article_image_placeholder' }}.jpg" alt="{{ article.image if article.image else 'article_image_placeholder' }}" />

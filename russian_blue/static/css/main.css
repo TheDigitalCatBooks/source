@@ -437,12 +437,13 @@ div.post-content em {
   font-style: italic; }
 
 div.post-content blockquote {
-  margin: 0 0 4rem;
-  text-align: right; }
+  text-align: right;
+  margin: 0 0 4rem; }
   div.post-content blockquote p {
-    font-style: italic;
-    margin: 0;
-    text-align: right; }
+    text-align: right;
+    margin: 0; }
+  div.post-content blockquote > p {
+    font-style: italic; }
   div.post-content blockquote cite {
     font-size: 0.9rem; }
 
@@ -537,6 +538,9 @@ div.code div.title {
   border: 1px solid black;
   border-bottom: 0px; }
 
+div.code.code-html div.title {
+  background-color: #11b79c; }
+
 span.callout {
   border-radius: 1rem;
   border: 1px solid black;
@@ -556,6 +560,17 @@ div.callout div.content {
   margin: 0; }
 
 div.callout div.title {
+  font-weight: 700; }
+
+div.mau {
+  border-left: 4px solid #4969af;
+  margin: 2rem 0;
+  padding-left: 1rem; }
+
+div.callout div.content {
+  margin: 0; }
+
+div.mau div.title {
   font-weight: 700; }
 
 div.admonition {

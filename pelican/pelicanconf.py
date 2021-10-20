@@ -13,6 +13,9 @@ TIMEZONE = "Europe/London"
 
 DEFAULT_LANG = "en"
 
+# No summary for these posts
+SUMMARY_MAX_LENGTH = 0
+
 # Feed generation is usually not desired when developing
 # FEED_ALL_ATOM = "atom.xml"
 # TAG_FEED_ATOM = "categories/{slug}/atom.xml"
@@ -91,11 +94,11 @@ MARKDOWN = {
 
 MAU = {
     "custom_templates": {
-        "admonition.html": (
-            '<div class="admonition {{ class }}">'
-            '<i class="fa fa-{{ icon }}"></i>'
+        "block-admonition.html": (
+            '<div class="admonition {{ kwargs.class }}">'
+            '<i class="fa fa-{{ kwargs.icon }}"></i>'
             '<div class="content">'
-            '<div class="title">{{ label }}</div>'
+            '<div class="title">{{ kwargs.label }}</div>'
             "<div>{{ content }}</div>"
             "</div>"
             "</div>"
@@ -109,7 +112,7 @@ MAU = {
         "footnote_def.html": (
             '<div class="footnote" id="{{ defanchor }}">'
             '<a href="#{{ refanchor }}">{{ number }}</a>'
-            "<p>{{ text }}</p>"
+            "<p>{{ content }}</p>"
             "</div>"
         ),
         "header.html": (
@@ -118,7 +121,22 @@ MAU = {
             '{% if anchor and level <= 2 %}<a class="headerlink" href="#{{ anchor }}" title="Permanent link">¶</a>{% endif %}'
             "</h{{ level }}>"
         ),
-    }
+        "block-source.html": (
+            '<div class="code code-{{ kwargs.language }}">'
+            '{% if title %}<div class="title">{{ title }}</div>{% endif %}'
+            '<div class="content">{{ content }}</div>'
+            '{% if kwargs.callouts %}<div class="callouts">'
+            "<table><tbody>"
+            "{% for callout in kwargs.callouts %}<tr>"
+            "<td>{{ callout[0] }}</td>"
+            "<td>{{ callout[1] }}</td>"
+            "</tr>{% endfor %}"
+            "</tbody></table>"
+            "</div>{% endif %}"
+            "</div>"
+        ),
+    },
+    "block_definitions": {},
 }
 
 QUOTES = [
