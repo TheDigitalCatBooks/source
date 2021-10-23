@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Home{% if articles_page.number != 1 %} Page {{ articles_page.number }}{% endif %}{% endblock %}
+{% block title %}{{ SITENAME }} - Home{% if articles_page.number != 1 %} Page {{ articles_page.number }}{% endif %}{% endblock %}
 
 {% block content %}
 <img class="cover" src="/images/global/cover.jpg" alt="Cover">
